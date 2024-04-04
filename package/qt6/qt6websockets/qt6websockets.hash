@@ -1,5 +1,5 @@
-# Hash from: https://download.qt.io/official_releases/qt/6.6/6.6.2/submodules/qtwebsockets-everywhere-src-6.6.2.tar.xz.sha256
-sha256  c0e6ea9bc8db4290bb43e683fb3d639055fe91258f357980eb6ef5abab4438f9  qtwebsockets-everywhere-src-6.6.2.tar.xz
+# Hash from: https://download.qt.io/official_releases/qt/6.7/6.7.0/submodules/qtwebsockets-everywhere-src-6.7.0.tar.xz.sha256
+sha256  5ffc77da6b36cdf18e04c975a0fbf243968806a93a6291bcd2e9cd0b26139736  qtwebsockets-everywhere-src-6.7.0.tar.xz
 
 # Hashes for license files:
 sha256  9f0490f18656c6f2435bd14f603ef0c96434d1825615363dce43abb42ed1dcce  LICENSES/BSD-3-Clause.txt

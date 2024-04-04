@@ -76,21 +76,29 @@ QT6BASE_CONF_OPTS += \
 	-DFEATURE_avx512vbmi=OFF \
 	-DFEATURE_avx512vbmi2=OFF \
 	-DFEATURE_avx512vl=OFF \
-	-DFEATURE_vaes=OFF \
-	-DFEATURE_wayland=ON
+	-DFEATURE_vaes=OFF
+
+# ifeq ($(BR2_PACKAGE_QT6WAYLAND),y)
+# QT6BASE_CONF_OPTS += -DFEATURE_wayland=ON
+# QT6BASE_DEPENDENCIES += \
+# 	wayland \
+# 	host-wayland
+# 	host-pkgconf
+# else
+# QT6BASE_CONF_OPTS += -DFEATURE_wayland=OFF
+# endif
 
 HOST_QT6BASE_DEPENDENCIES = \
 	host-double-conversion \
 	host-libb2 \
 	host-pcre2 \
 	host-zlib
+
 HOST_QT6BASE_CONF_OPTS = \
-	-DFEATURE_gui=ON \
 	-DFEATURE_concurrent=OFF \
 	-DFEATURE_xml=ON \
 	-DFEATURE_sql=OFF \
 	-DFEATURE_testlib=OFF \
-	-DFEATURE_network=ON \
 	-DFEATURE_dbus=OFF \
 	-DFEATURE_icu=OFF \
 	-DFEATURE_glib=OFF \
@@ -98,6 +106,18 @@ HOST_QT6BASE_CONF_OPTS = \
 	-DFEATURE_system_libb2=ON \
 	-DFEATURE_system_pcre2=ON \
 	-DFEATURE_system_zlib=ON
+
+ifeq ($(BR2_PACKAGE_HOST_QT6BASE_GUI),y)
+HOST_QT6BASE_CONF_OPTS += -DFEATURE_gui=ON
+else
+HOST_QT6BASE_CONF_OPTS += -DFEATURE_gui=OFF
+endif
+
+ifeq ($(BR2_PACKAGE_HOST_QT6BASE_NETWORK),y)
+HOST_QT6BASE_CONF_OPTS += -DFEATURE_network=ON
+else
+HOST_QT6BASE_CONF_OPTS += -DFEATURE_network=OFF
+endif
 
 # Conditional blocks below are ordered by alphabetic ordering of the
 # BR2_PACKAGE_* option.
@@ -160,11 +180,6 @@ QT6BASE_DEPENDENCIES += \
 else
 QT6BASE_CONF_OPTS += -DFEATURE_xcb=OFF
 endif
-
-QT6BASE_DEPENDENCIES += \
-	wayland \
-	host-wayland \
-	host-pkgconf
 
 ifeq ($(BR2_PACKAGE_QT6BASE_HARFBUZZ),y)
 QT6BASE_CONF_OPTS += -DFEATURE_harfbuzz=ON
@@ -264,15 +279,20 @@ else
 QT6BASE_CONF_OPTS += -DFEATURE_eglfs=OFF
 endif
 
-# ifeq ($(BR2_PACKAGE_QT6BASE_OPENGL_DESKTOP),y)
-QT6BASE_CONF_OPTS += -DFEATURE_opengl=ON -DFEATURE_opengl_desktop=OFF
-#QT6BASE_DEPENDENCIES += libgl
-# else ifeq ($(BR2_PACKAGE_QT6BASE_OPENGL_ES2),y)
-QT6BASE_CONF_OPTS += -DFEATURE_opengl=ON -DFEATURE_opengles2=ON
+ifeq ($(BR2_PACKAGE_QT6BASE_OPENGL_DESKTOP),y)
+QT6BASE_CONF_OPTS += \
+	-DFEATURE_opengl=ON \
+	-DFEATURE_opengl_desktop=ON
+QT6BASE_DEPENDENCIES += libgl
+else ifeq ($(BR2_PACKAGE_QT6BASE_OPENGL_ES2),y)
+QT6BASE_CONF_OPTS += \
+	-DFEATURE_opengl=ON \
+	-DFEATURE_opengles2=ON \
+	-DFEATURE_opengl_desktop=OFF
 QT6BASE_DEPENDENCIES += libgles
-# else
-# QT6BASE_CONF_OPTS += -DFEATURE_opengl=OFF -DINPUT_opengl=no
-# endif
+else
+QT6BASE_CONF_OPTS += -DFEATURE_opengl=OFF -DINPUT_opengl=no
+endif
 
 else
 QT6BASE_CONF_OPTS += -DFEATURE_gui=OFF

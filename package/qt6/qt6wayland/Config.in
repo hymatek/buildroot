@@ -1,19 +1,24 @@
+comment "qt6wayland needs an OpenGL-capable backend"
+	depends on !BR2_PACKAGE_QT6_GL_SUPPORTS
+
 config BR2_PACKAGE_QT6WAYLAND
 	bool "qt6wayland"
+	depends on BR2_PACKAGE_QT6_GL_SUPPORTS
+	select BR2_PACKAGE_WAYLAND
 	help
 	  Qt is a cross-platform application and UI framework for
 	  developers using C++.
 
-	  This package corresponds to the qt6serialbus module.
+	  This package corresponds to the qt6wayland module.
 
 	  https://doc.qt.io/qt-6/qtwayland-index.html
 
-#if BR2_PACKAGE_QT6WAYLAND
+if BR2_PACKAGE_QT6WAYLAND
 
-#config BR2_PACKAGE_QT6DECLARATIVE_QUICK
-#	bool "quick module"
-#	select BR2_PACKAGE_QT6BASE_GUI
-#	select BR2_PACKAGE_QT6LANGUAGESERVER
-#	select BR2_PACKAGE_QT6BASE_OPENGL if BR2_PACKAGE_QT5_GL_AVAILABLE
-#
-#endif
+config BR2_PACKAGE_QT6WAYLAND_COMPOSITOR
+	bool "Enable compositor (experimental)"
+	help
+	  The compositor API is still experimental, and not built by
+	  default.
+
+endif

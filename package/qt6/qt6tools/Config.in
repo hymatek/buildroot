@@ -1,5 +1,6 @@
 config BR2_PACKAGE_QT6TOOLS
 	bool "qt6tools"
+	select BR2_PACKAGE_HOST_QT6BASE_NETWORK
 	help
 	  Qt is a cross-platform application and UI framework for
 	  developers using C++.

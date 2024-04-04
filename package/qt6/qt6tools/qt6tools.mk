@@ -33,6 +33,5 @@ QT6TOOLS_DEPENDENCIES = \
 	qt6declarative \
 	host-qt6tools
 
-
 $(eval $(cmake-package))
 $(eval $(host-cmake-package))

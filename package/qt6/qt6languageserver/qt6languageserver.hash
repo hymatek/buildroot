@@ -1,5 +1,5 @@
-# Hash from: https://download.qt.io/official_releases/qt/6.6/6.6.2/submodules/qtlanguageserver-everywhere-src-6.6.2.tar.xz.sha256
-sha256  c31f4c45e0abffe7b444b224d1e49948f1c76210172e1f17104cf14a48fceaad  qtlanguageserver-everywhere-src-6.6.2.tar.xz
+# Hash from: https://download.qt.io/official_releases/qt/6.7/6.7.0/submodules/qtlanguageserver-everywhere-src-6.7.0.tar.xz.sha256
+sha256  a99ecb342abdf7b7ac24804c89830a7991de95f9402f45a1e337ae851f76c9fc  qtlanguageserver-everywhere-src-6.7.0.tar.xz
 
 # Hashes for license files:
 sha256  9f0490f18656c6f2435bd14f603ef0c96434d1825615363dce43abb42ed1dcce  LICENSES/BSD-3-Clause.txt

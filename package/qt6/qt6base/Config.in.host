@@ -1,0 +1,25 @@
+config BR2_PACKAGE_HOST_QT6BASE
+	bool "host qt6base"
+	help
+	  Qt is a cross-platform application and UI framework for
+	  developers using C++.
+
+	  This package corresponds to the qt6base module, which
+	  contains the base Qt libraries: QtCore, QtNetwork, QtGui,
+	  QtWidgets, etc.
+
+	  http://qt.io
+
+if BR2_PACKAGE_HOST_QT6BASE
+
+config BR2_PACKAGE_HOST_QT6BASE_GUI
+	bool "gui module"
+	help
+	  This option enables the Qt6Gui library.
+
+config BR2_PACKAGE_HOST_QT6BASE_NETWORK
+	bool "network module"
+	help
+	  This options enables the Qt6Network library.
+
+endif
