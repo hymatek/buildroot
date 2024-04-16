@@ -1,3 +1,6 @@
+config BR2_PACKAGE_HOST_QT6BASE_GUI
+	bool
+
 config BR2_PACKAGE_QT6BASE
 	bool "qt6base"
 	select BR2_PACKAGE_DOUBLE_CONVERSION
