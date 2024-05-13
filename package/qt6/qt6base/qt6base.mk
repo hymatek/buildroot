@@ -86,7 +86,6 @@ HOST_QT6BASE_CONF_OPTS = \
 	-DFEATURE_concurrent=OFF \
 	-DFEATURE_xml=ON \
 	-DFEATURE_sql=OFF \
-	-DFEATURE_testlib=OFF \
 	-DFEATURE_dbus=OFF \
 	-DFEATURE_icu=OFF \
 	-DFEATURE_glib=OFF \
@@ -105,6 +104,12 @@ ifeq ($(BR2_PACKAGE_HOST_QT6BASE_NETWORK),y)
 HOST_QT6BASE_CONF_OPTS += -DFEATURE_network=ON
 else
 HOST_QT6BASE_CONF_OPTS += -DFEATURE_network=OFF
+endif
+
+ifeq ($(BR2_PACKAGE_HOST_QT6BASE_TEST),y)
+HOST_QT6BASE_CONF_OPTS += -DFEATURE_testlib=ON
+else
+HOST_QT6BASE_CONF_OPTS += -DFEATURE_testlib=OFF
 endif
 
 # Conditional blocks below are ordered by alphabetic ordering of the
