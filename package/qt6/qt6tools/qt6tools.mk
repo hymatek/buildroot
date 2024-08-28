@@ -13,19 +13,27 @@ QT6TOOLS_SUPPORTS_IN_SOURCE_BUILD = NO
 QT6TOOLS_CMAKE_BACKEND = ninja
 
 QT6TOOLS_LICENSE = \
-	BSD-3-Clause (examples), \
-	BSD-3-Clause (corecon), \
-	BSL-1.0 (catch), \
-	LGPL-3.0 or GPL-3.0 or GPL-2.0, \
-	GPL-3.0 WITH Qt-GPL-exception-1.0
+	Apache-2.0 and MIT (litehtml-gumbo), \
+	Apache-2.0 with LLVM-exception (llvm_clang_typename_namespace), \
+	BSD-3-Clause (buildsystem, examples, litehtml, snippets), \
+	BSL-1.0 (catch2), \
+	GFDL-1.3-no-invariants (docs), \
+	GPL-3.0 (tests), \
+	GPL-3.0 with Qt-GPL-exception-1.0 (tests, tools, utils), \
+	LGPL-3.0 or GPL-2.0 or GPL-3.0 (modules, plugins)
 
 QT6TOOLS_LICENSE_FILES = \
 	LICENSES/BSD-3-Clause.txt \
 	LICENSES/BSL-1.0.txt \
+	LICENSES/GFDL-1.3-no-invariants-only.txt \
 	LICENSES/GPL-2.0-only.txt \
 	LICENSES/GPL-3.0-only.txt \
 	LICENSES/LGPL-3.0-only.txt \
-	LICENSES/Qt-GPL-exception-1.0.txt
+	LICENSES/Qt-GPL-exception-1.0.txt \
+	src/assistant/qlitehtml/src/3rdparty/GUMBO-AUTHORS.txt \
+	src/assistant/qlitehtml/src/3rdparty/litehtml/LICENSE \
+	src/qdoc/catch/CATCH_LICENSE.txt \
+	src/qdoc/qdoc/src/qdoc/clang/AST/LLVM_LICENSE.txt
 
 QT6TOOLS_CONF_OPTS = \
 	-DQT_HOST_PATH=$(HOST_DIR) \

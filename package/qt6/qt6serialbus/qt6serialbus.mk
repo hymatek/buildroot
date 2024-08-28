@@ -13,14 +13,18 @@ QT6SERIALBUS_SUPPORTS_IN_SOURCE_BUILD = NO
 QT6SERIALBUS_CMAKE_BACKEND = ninja
 
 QT6SERIALBUS_LICENSE = \
-	GPL-2.0+ or LGPL-3.0, \
-	GPL-3.0, GFDL-1.3 no invariants (docs)
+	BSD-3-Clause (buildsystem, examples, snippets), \
+	GFDL-1.3-no-invariants (docs), \
+	GPL-3.0 (tests), \
+	LGPL-3.0 or GPL-2.0 or GPL-3.0 (modules, plugins, tools)
 
 QT6SERIALBUS_LICENSE_FILES = \
+	LICENSES/BSD-3-Clause.txt \
+	LICENSES/GFDL-1.3-no-invariants-only.txt \
 	LICENSES/GPL-2.0-only.txt \
 	LICENSES/GPL-3.0-only.txt \
 	LICENSES/LGPL-3.0-only.txt \
-	LICENSES/GFDL-1.3-no-invariants-only.txt
+	LICENSES/Qt-GPL-exception-1.0.txt
 
 QT6SERIALBUS_CONF_OPTS = \
 	-DQT_HOST_PATH=$(HOST_DIR) \

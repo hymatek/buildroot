@@ -14,14 +14,15 @@ QT6MQTT_SUPPORTS_IN_SOURCE_BUILD = NO
 QT6MQTT_CMAKE_BACKEND = ninja
 
 QT6MQTT_LICENSE = \
-	BSD-3-Clause (examples), \
-	GFDL-1.3-invariants-only (docs), \
-	GPL-3.0
+	BSD-3-Clause (buildsystem, examples), \
+	GFDL-1.3-no-invariants (docs), \
+	GPL-3.0 (modules, tests)
 
 QT6MQTT_LICENSE_FILES = \
 	LICENSES/BSD-3-Clause.txt \
 	LICENSES/GFDL-1.3-no-invariants-only.txt \
-	LICENSES/GPL-3.0-only.txt
+	LICENSES/GPL-3.0-only.txt \
+	LICENSES/Qt-GPL-exception-1.0.txt
 
 QT6MQTT_CONF_OPTS = \
 	-DQT_HOST_PATH=$(HOST_DIR) \

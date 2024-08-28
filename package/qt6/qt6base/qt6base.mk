@@ -16,24 +16,112 @@ QT6BASE_IGNORE_CVES += CVE-2024-39936
 QT6BASE_CMAKE_BACKEND = ninja
 
 QT6BASE_LICENSE = \
-	GPL-2.0+ or LGPL-3.0, \
-	GPL-3.0 with exception (tools), \
-	GFDL-1.3 (docs), \
-	Apache-2.0, \
-	BSD-3-Clause, \
-	BSL-1.0, \
-	MIT
+	AFL-2.1 or GPL-2.0+ (libdbus-1-headers), \
+	Apache-2.0 (utils), \
+	Apache-2.0 or MIT (vulkan-xml-spec), \
+	BSD-2-Clause (pcre2-sljit, sha3_endian), \
+	BSD-2-Clause and Imlib2 (smooth-scaling-algorithm), \
+	BSD-3-Clause (aglfn, doubleconversion, easing, extra-cmake-modules, \
+		iaccessible2, kwin, libpsl, qeventdispatcher_cf, \
+		rfc6234, buildsystem, examples, snippets, utils), \
+	BSD-4-Clause (valgrind), \
+	BSL-1.0 (catch2), \
+	CC0-1.0 (md4, md5, sha3_keccak, siphash), \
+	CC0-1.0 or Apache-2.0 (blake2), \
+	FTL or GPL-2.0 (freetype, grayraster), \
+	GFDL-1.3-no-invariants (docs), \
+	GPL-2.0 with Linux-syscall-note (linuxperf), \
+	GPL-3.0 (plugins, tests, utils), \
+	GPL-3.0 with Qt-GPL-exception-1.0 (tools, tests, util) \
+	IJG and BSD-3-Clause (libjpeg), \
+	LGPL-3.0 or GPL-2.0 or GPL-3.0 (modules, plugins), \
+	Libpng and libpng-2.0 (libpng), \
+	LicenseRef-BSD-3-Clause-with-PCRE2-Binary-Like-Packages-Exception (pcre2), \
+	LicenseRef-ICC-License (icc-sRGB-color-profile), \
+	LicenseRef-SHA1-Public-Domain (sha1), \
+	MIT (D3D12MemoryAllocator, VulkanMemoryAllocator, cycle, forkfd, \
+		freetype-bdf, harfbuzz-ng, md4c, opengl-es2-headers, \
+		opengl-headers, pixman, rhi-miniengine-d3d12-mipmap, \
+		tinycbor, webgradients, xcb-xinput), \
+	MIT and MIT-open-group (freetype-pcf), \
+	MPL-2.0 (psl-data), \
+	Unicode-3.0 (unicode-cldr), \
+	Unicode-DFS-2016 (unicode-character-database), \
+	X11 and HPND (xserverhelper), \
+	Zlib (freetype-zlib, zlib), \
+	blessing (sqlite), \
+	urn:dje:license:bitstream (dejayvu, vera_font), \
+	urn:dje:license:lcs-telegraphics (wintab)
 
 QT6BASE_LICENSE_FILES = \
+	LICENSES/AFL-2.1.txt \
 	LICENSES/Apache-2.0.txt \
 	LICENSES/BSD-3-Clause.txt \
 	LICENSES/BSL-1.0.txt \
+	LICENSES/CC0-1.0.txt \
 	LICENSES/GFDL-1.3-no-invariants-only.txt \
 	LICENSES/GPL-2.0-only.txt \
+	LICENSES/GPL-2.0-or-later.txt \
 	LICENSES/GPL-3.0-only.txt \
 	LICENSES/LGPL-3.0-only.txt \
+	LICENSES/LicenseRef-BSD-3-Clause-with-PCRE2-Binary-Like-Packages-Exception.txt \
+	LICENSES/LicenseRef-SHA1-Public-Domain.txt \
 	LICENSES/MIT.txt \
-	LICENSES/Qt-GPL-exception-1.0.txt
+	LICENSES/Qt-GPL-exception-1.0.txt \
+	LICENSES/Unicode-3.0.txt \
+	LICENSES/Unicode-DFS-2016.txt \
+	LICENSES/blessing.txt \
+	cmake/3rdparty/extra-cmake-modules/COPYING-CMAKE-SCRIPTS \
+	cmake/3rdparty/kwin/COPYING-CMAKE-SCRIPTS \
+	src/3rdparty/D3D12MemoryAllocator/LICENSE.txt \
+	src/3rdparty/VulkanMemoryAllocator/LICENSE.txt \
+	src/3rdparty/android/LICENSE \
+	src/3rdparty/blake2/COPYING \
+	src/3rdparty/double-conversion/LICENSE \
+	src/3rdparty/easing/LICENSE \
+	src/3rdparty/forkfd/LICENSE \
+	src/3rdparty/freetype/BDF-LICENSE.txt \
+	src/3rdparty/freetype/LICENSE.txt \
+	src/3rdparty/freetype/PCF-LICENSE.txt \
+	src/3rdparty/freetype/ZLIB-LICENSE.txt \
+	src/3rdparty/gradle/LICENSE \
+	src/3rdparty/harfbuzz-ng/COPYING \
+	src/3rdparty/iaccessible2/LICENSE \
+	src/3rdparty/icc/LICENSE.txt \
+	src/3rdparty/libjpeg/COPYRIGHT.txt \
+	src/3rdparty/libjpeg/LICENSE \
+	src/3rdparty/libjpeg/ijg-license.txt \
+	src/3rdparty/libpng/LICENSE \
+	src/3rdparty/libpsl/PSL-LICENSE.txt \
+	src/3rdparty/libpsl/src/LICENSE.chromium \
+	src/3rdparty/md4c/LICENSE.md \
+	src/3rdparty/pcre2/LICENCE \
+	src/3rdparty/pcre2/LICENCE-SLJIT \
+	src/3rdparty/pixman/LICENSE \
+	src/3rdparty/rfc6234/LICENSE \
+	src/3rdparty/sha3/BRG_ENDIAN_LICENSE \
+	src/3rdparty/sha3/CC0_LICENSE \
+	src/3rdparty/tinycbor/LICENSE \
+	src/3rdparty/wasm/DEJAVU-LICENSE \
+	src/3rdparty/wasm/VERA-LICENSE \
+	src/3rdparty/wintab/LICENSE.txt \
+	src/3rdparty/xcb/LICENSE \
+	src/3rdparty/zlib/LICENSE \
+	src/corelib/kernel/QEVENTDISPATCHER_CF_LICENSE.txt \
+	src/corelib/tools/LICENSE.siphash \
+	src/dbus/LIBDBUS-1-LICENSE.txt \
+	src/gui/opengl/KHRONOS_LICENSE.txt \
+	src/gui/painting/QIMAGETRANSFORM_LICENSE.txt \
+	src/gui/painting/XCONSORTIUM_LICENSE.txt \
+	src/gui/rhi/MiniEngine_LICENSE.txt \
+	src/gui/text/AGLFN_LICENSE.txt \
+	src/gui/vulkan/LICENSE.txt \
+	src/plugins/platforms/cocoa/COCOA_LICENSE.txt \
+	src/testlib/3rdparty/CYCLE_LICENSE.txt \
+	src/testlib/3rdparty/LINUX_LICENSE.txt \
+	src/testlib/3rdparty/VALGRIND_LICENSE.txt \
+	tests/auto/testlib/selftests/CATCH_LICENSE.txt \
+	util/gradientgen/WEBGRADIENTS_LICENSE.txt
 
 QT6BASE_DEPENDENCIES = \
 	host-qt6base \

@@ -14,13 +14,17 @@ QT6VIRTUALKEYBOARD_SUPPORTS_IN_SOURCE_BUILD = NO
 QT6VIRTUALKEYBOARD_CMAKE_BACKEND = ninja
 
 QT6VIRTUALKEYBOARD_LICENSE = \
-	BSD-3-Clause (examples), \
-	GPL-3.0, \
-	Apache-2.0 (openwnn, pinyin, tcime plugins)
+	Apache-2.0 (openwnn, pinyin), \
+	Apache-2.0 and BSD-3-Clause (tcime), \
+	BSD-3-Clause (buildsystem, examples, snippets), \
+	GFDL-1.3-no-invariants (docs), \
+	GPL-3.0 (modules, plugins, tests)
 
 QT6VIRTUALKEYBOARD_LICENSE_FILES = \
 	LICENSES/BSD-3-Clause.txt \
+	LICENSES/GFDL-1.3-no-invariants-only.txt \
 	LICENSES/GPL-3.0-only.txt \
+	LICENSES/Qt-GPL-exception-1.0.txt \
 	src/plugins/openwnn/3rdparty/openwnn/NOTICE \
 	src/plugins/pinyin/3rdparty/pinyin/NOTICE \
 	src/plugins/tcime/3rdparty/tcime/COPYING

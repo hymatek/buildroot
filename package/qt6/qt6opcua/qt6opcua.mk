@@ -13,16 +13,26 @@ QT6OPCUA_SUPPORTS_IN_SOURCE_BUILD = NO
 QT6OPCUA_CMAKE_BACKEND = ninja
 
 QT6OPCUA_LICENSE = \
-	GPL-2.0 or GPL-3.0 or LGPL-3.0, \
-	GFDL-1.3 no invariants (docs), \
-	BSD-3-Clause (examples + buildsystem)
+	BSD-3-Clause (buildsystem, examples, snippets), \
+	GFDL-1.3-no-invariants (docs), \
+	GPL-3.0 (tests), \
+	LGPL-3.0 or GPL-2.0 or GPL-3.0 (modules, plugins, tools), \
+	MPL-2.0 and CC0-1.0 and CC-BY-SA-4.0 and BSD-3-Clause and Apache-2.0 and MIT (open62541)
 
 QT6OPCUA_LICENSE_FILES = \
 	LICENSES/BSD-3-Clause.txt \
 	LICENSES/GFDL-1.3-no-invariants-only.txt \
 	LICENSES/GPL-2.0-only.txt \
 	LICENSES/GPL-3.0-only.txt \
-	LICENSES/LGPL-3.0-only.txt
+	LICENSES/LGPL-3.0-only.txt \
+	LICENSES/Qt-GPL-exception-1.0.txt \
+	src/3rdparty/open62541/AUTHORS \
+	src/3rdparty/open62541/BSD-3-CLAUSE \
+	src/3rdparty/open62541/CC-BY-SA-4.0 \
+	src/3rdparty/open62541/LICENSE-2.0.txt \
+	src/3rdparty/open62541/LICENSE-CC0 \
+	src/3rdparty/open62541/MIT \
+	src/3rdparty/open62541/mpl-2.0.815ca599c9df.txt
 
 QT6OPCUA_CONF_OPTS = \
 	-DQT_HOST_PATH=$(HOST_DIR) \

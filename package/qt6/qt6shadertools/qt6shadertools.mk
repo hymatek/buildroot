@@ -13,17 +13,28 @@ QT6SHADERTOOLS_SUPPORTS_IN_SOURCE_BUILD = NO
 QT6SHADERTOOLS_CMAKE_BACKEND = ninja
 
 QT6SHADERTOOLS_LICENSE = \
+	Apache-2.0 and urn:dje:license:khronos (SPIRV-Cross), \
 	Apache-2.0 or MIT (SPIRV-Cross), \
-	GPL-2.0 or LGPL-3.0 or GPL-3.0, \
-	GPL-3.0 (tests), GFDL-1.3 no invariants (docs), \
-	GPL-3.0 WITH Qt-GPL-exception-1.0 (tools)
+	BSD-3-Clause (buildsystem), \
+	BSD-3-Clause and urn:dje:license:khronos and Apache-2.0 and GPL-3.0+ with Bison-exception-2.2 and AML-glslang (glslang), \
+	GFDL-1.3-no-invariants (docs), \
+	GPL-3.0 (tests), \
+	GPL-3.0 with Qt-GPL-exception-1.0 (qsb), \
+	LGPL-3.0 or GPL-2.0 or GPL-3.0 (modules), \
+	MIT (SPIRV-Cross)
 
 QT6SHADERTOOLS_LICENSE_FILES = \
+	LICENSES/BSD-3-Clause.txt \
+	LICENSES/GFDL-1.3-no-invariants-only.txt \
 	LICENSES/GPL-2.0-only.txt \
 	LICENSES/GPL-3.0-only.txt \
 	LICENSES/LGPL-3.0-only.txt \
-	LICENSES/GFDL-1.3-no-invariants-only.txt \
-	LICENSES/Qt-GPL-exception-1.0.txt
+	LICENSES/Qt-GPL-exception-1.0.txt \
+	src/3rdparty/SPIRV-Cross/COPYRIGHT.txt \
+	src/3rdparty/SPIRV-Cross/KHRONOS-LICENSE.txt \
+	src/3rdparty/SPIRV-Cross/LICENSE \
+	src/3rdparty/glslang/COPYRIGHT.txt \
+	src/3rdparty/glslang/LICENSE.txt
 
 QT6SHADERTOOLS_CONF_OPTS = \
 	-DBUILD_WITH_PCH=OFF \

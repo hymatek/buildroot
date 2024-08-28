@@ -14,18 +14,23 @@ QT6WAYLAND_SUPPORTS_IN_SOURCE_BUILD = NO
 QT6WAYLAND_CMAKE_BACKEND = ninja
 
 QT6WAYLAND_LICENSE = \
-	BSD-3-Clause (examples, tests), \
-	GPL-3.0 (compositor), \
-	LGPL-3.0 or GPL-2.0 or GPL-3.0, \
-	GPL-3.0 WITH Qt-GPL-exception-1.0 (tests), \
-	GFDL-1.3 no invariants (docs)
+	BSD-3-Clause (buildsystem, examples, tests), \
+	GFDL-1.3-no-invariants (docs), \
+	GPL-3.0 (compositor, modules, plugins), \
+	GPL-3.0 with Qt-GPL-exception-1.0 (tests, tools), \
+	HPND (wayland-text-input-unstable-v2), \
+	LGPL-3.0 or GPL-2.0 or GPL-3.0 (client, modules, plugins, tests), \
+	MIT (protocol)
 
 QT6WAYLAND_LICENSE_FILES = \
 	LICENSES/BSD-3-Clause.txt \
+	LICENSES/GFDL-1.3-no-invariants-only.txt \
 	LICENSES/GPL-2.0-only.txt \
 	LICENSES/GPL-3.0-only.txt \
 	LICENSES/LGPL-3.0-only.txt \
-	LICENSES/GFDL-1.3-no-invariants-only.txt
+	LICENSES/Qt-GPL-exception-1.0.txt \
+	src/3rdparty/protocol/HPND_LICENSE.txt \
+	src/3rdparty/protocol/MIT_LICENSE.txt
 
 QT6WAYLAND_CONF_OPTS = \
 	-DQT_HOST_PATH=$(HOST_DIR) \

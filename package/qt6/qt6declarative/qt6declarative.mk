@@ -14,20 +14,30 @@ QT6DECLARATIVE_SUPPORTS_IN_SOURCE_BUILD = NO
 QT6DECLARATIVE_CMAKE_BACKEND = ninja
 
 QT6DECLARATIVE_LICENSE = \
-	LGPL-3.0 or GPL-3.0 or GPL-2.0, \
-	BSD-3-Clause (docs), \
-	GFDL-1.3 no invariants (docs), \
-	BSD-3-Clause (examples), \
-	GPL-3.0 (tests), \
-	GPL-3.0 WITH Qt-GPL-exception-1.0 (tools)
+	Apache-2.0 (weatherforecast example, weather-icons), \
+	BSD-2-Clause (masm), \
+	BSD-3-Clause (buildsystem, examples, snippets), \
+	CC-BY-3.0 (map-of-europe), \
+	GFDL-1.3-no-invariants (docs), \
+	GPL-3.0 (tests, tools), \
+	GPL-3.0 with Qt-GPL-exception-1.0 (plugins, tests, tools), \
+	LGPL-3.0 or GPL-2.0 or GPL-3.0 (modules, plugins), \
+	MIT (gear-icon, shadow_angular_material), \
+	OFL-1.1 (work-sans-font)
 
 QT6DECLARATIVE_LICENSE_FILES = \
+	LICENSES/Apache-2.0.txt \
 	LICENSES/BSD-3-Clause.txt \
+	LICENSES/CC-BY-3.0.txt \
+	LICENSES/GFDL-1.3-no-invariants-only.txt \
 	LICENSES/GPL-2.0-only.txt \
 	LICENSES/GPL-3.0-only.txt \
 	LICENSES/LGPL-3.0-only.txt \
-	LICENSES/GFDL-1.3-no-invariants-only.txt \
-	LICENSES/Qt-GPL-exception-1.0.txt
+	LICENSES/MIT.txt \
+	LICENSES/OFL-1.1.txt \
+	LICENSES/Qt-GPL-exception-1.0.txt \
+	src/3rdparty/masm/LICENSE \
+	src/quickcontrols/material/LICENSE_ANGULARJS.txt
 
 QT6DECLARATIVE_CONF_OPTS = \
 	-DQT_HOST_PATH=$(HOST_DIR) \

@@ -13,10 +13,11 @@ QT6SVG_SUPPORTS_IN_SOURCE_BUILD = NO
 QT6SVG_CMAKE_BACKEND = ninja
 
 QT6SVG_LICENSE = \
-	GPL-2.0+ or LGPL-3.0, \
-	GPL-3.0 with exception (tools), \
-	GFDL-1.3 (docs), \
-	BSD-3-Clause
+	BSD-3-Clause (buildsystem, examples, snippets), \
+	GFDL-1.3-no-invariants (docs), \
+	GPL-3.0 (tests), \
+	HPND-sell-variant (xsvg), \
+	LGPL-3.0 or GPL-2.0 or GPL-3.0 (modules, plugins)
 
 QT6SVG_LICENSE_FILES = \
 	LICENSES/BSD-3-Clause.txt \
@@ -24,7 +25,8 @@ QT6SVG_LICENSE_FILES = \
 	LICENSES/GPL-2.0-only.txt \
 	LICENSES/GPL-3.0-only.txt \
 	LICENSES/LGPL-3.0-only.txt \
-	LICENSES/Qt-GPL-exception-1.0.txt
+	LICENSES/Qt-GPL-exception-1.0.txt \
+	src/svg/XSVG_LICENSE.txt
 
 QT6SVG_CONF_OPTS = \
 	-DQT_HOST_PATH=$(HOST_DIR) \

@@ -13,10 +13,10 @@ QT6SERIALPORT_SUPPORTS_IN_SOURCE_BUILD = NO
 QT6SERIALPORT_CMAKE_BACKEND = ninja
 
 QT6SERIALPORT_LICENSE = \
-	GPL-2.0+ or LGPL-3.0, \
-	GPL-3.0 with exception (tools), \
-	GFDL-1.3 (docs), \
-	BSD-3-Clause
+	BSD-3-Clause (buildsystem, examples, snippets, tests), \
+	GFDL-1.3-no-invariants (docs), \
+	GPL-3.0 (tests), \
+	LGPL-3.0 or GPL-2.0 or GPL-3.0 (modules)
 
 QT6SERIALPORT_LICENSE_FILES = \
 	LICENSES/BSD-3-Clause.txt \
