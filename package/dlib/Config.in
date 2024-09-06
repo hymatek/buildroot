@@ -1,0 +1,60 @@
+config BR2_PACKAGE_DLIB
+	bool "dlib"
+	depends on BR2_INSTALL_LIBSTDCPP
+	depends on BR2_TOOLCHAIN_HAS_THREADS
+	help
+	  Dlib is a modern C++ toolkit containing machine learning
+	  algorithms and tools for creating complex software in C++ to
+	  solve real world problems.
+
+	  http://dlib.net
+
+if BR2_PACKAGE_DLIB
+
+config BR2_PACKAGE_DLIB_GIF_SUPPORT
+	bool "GIF support"
+	select BR2_PACKAGE_GIFLIB
+
+config BR2_PACKAGE_DLIB_GUI_SUPPORT
+	bool "GUI support"
+	depends on BR2_PACKAGE_XORG7
+	select BR2_PACKAGE_XLIB_LIBX11
+
+config BR2_PACKAGE_DLIB_JPEG_SUPPORT
+	bool "JPEG support"
+	select BR2_PACKAGE_JPEG
+
+config BR2_PACKAGE_DLIB_JXL_SUPPORT
+	bool "JXL support"
+	select BR2_PACKAGE_LIBJXL
+
+config BR2_PACKAGE_DLIB_PNG_SUPPORT
+	bool "PNG support"
+	select BR2_PACKAGE_LIBPNG
+
+config BR2_PACKAGE_DLIB_USE_BLAS
+	bool "use openblas"
+	depends on BR2_PACKAGE_OPENBLAS_ARCH_SUPPORTS
+	select BR2_PACKAGE_OPENBLAS
+
+config BR2_PACKAGE_DLIB_USE_FFMPEG
+	bool "use ffmpeg"
+	depends on BR2_PACKAGE_FFMPEG_ARCH_SUPPORTS
+	select BR2_PACKAGE_FFMPEG
+	select BR2_PACKAGE_FFMPEG_SWSCALE
+
+config BR2_PACKAGE_DLIB_USE_LAPACK
+	bool "use lapack"
+	depends on BR2_PACKAGE_LAPACK_ARCH_SUPPORTS
+	depends on BR2_TOOLCHAIN_HAS_FORTRAN
+	select BR2_PACKAGE_LAPACK
+
+config BR2_PACKAGE_DLIB_WEBP_SUPPORT
+	bool "WEBP support"
+	select BR2_PACKAGE_WEBP
+
+endif
+
+comment "dlib needs a toolchain w/ C++, threads"
+	depends on !BR2_INSTALL_LIBSTDCPP || \
+		!BR2_TOOLCHAIN_HAS_THREADS
