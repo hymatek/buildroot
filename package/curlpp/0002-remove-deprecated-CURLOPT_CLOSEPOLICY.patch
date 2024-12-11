@@ -1,0 +1,45 @@
+From c630eeace3e514d8f72942bbbcd40d0e95572c82 Mon Sep 17 00:00:00 2001
+From: Bruno de Lacheisserie <bruno.de.lacheisserie@gmail.com>
+Date: Tue, 10 Sep 2024 22:02:24 +0200
+Subject: [PATCH] remove deprecated `CURLOPT_CLOSEPOLICY`
+
+accorded to curl commit https://github.com/curl/curl/commit/ae76ebe2d1202a09b009c9294f63c2a1bc228bd8, this flag could never be used.
+
+Fixes:
+ - https://autobuild.buildroot.org/results/2d2db1d060ec779a4cc017bc583278a4ce2fdf14/
+
+Signed-off-by: Roy Kollen Svendsen <roykollensvendsen@gmail.com>
+Upstream: https://github.com/jpbarrette/curlpp/pull/171
+---
+ doc/guide.tex              | 2 --
+ include/curlpp/Options.hpp | 1 -
+ 2 files changed, 3 deletions(-)
+
+diff --git a/doc/guide.tex b/doc/guide.tex
+index 12165e7..76b5c59 100644
+--- a/doc/guide.tex
++++ b/doc/guide.tex
+@@ -623,8 +623,6 @@ see the ``how to enhance cURLpp'' section.
+         cURL::CURLOPT_LOW_SPEED_TIME > LowSpeedTime;
+       typedef cURLpp::OptionTrait< long, 
+         cURL::CURLOPT_MAXCONNECTS > MaxConnects;
+-      typedef cURLpp::OptionTrait< cURL::curl_closepolicy, 
+-        cURL::CURLOPT_CLOSEPOLICY > ClosePolicy;
+       typedef cURLpp::OptionTrait< bool, 
+         cURL::CURLOPT_FRESH_CONNECT > FreshConnect;
+       typedef cURLpp::OptionTrait< bool, 
+diff --git a/include/curlpp/Options.hpp b/include/curlpp/Options.hpp
+index e02508a..0407f29 100644
+--- a/include/curlpp/Options.hpp
++++ b/include/curlpp/Options.hpp
+@@ -309,7 +309,6 @@ namespace options
+ 	typedef curlpp::OptionTrait<std::string, CURLOPT_KRB4LEVEL> Krb4Level;
+ 	typedef curlpp::OptionTrait<std::string, CURLOPT_SSLKEYPASSWD> SslKeyPasswd;
+ 	typedef curlpp::OptionTrait<std::string, CURLOPT_SSLCERTPASSWD> SslCertPasswd;
+-	typedef curlpp::OptionTrait<curl_closepolicy, CURLOPT_CLOSEPOLICY> ClosePolicy;
+ 	typedef curlpp::OptionTrait<curl_ftpssl, CURLOPT_FTP_SSL> FtpSsl;
+ 	typedef curlpp::OptionTrait<long, CURLOPT_FTP_RESPONSE_TIMEOUT> FtpResponseTimeout;
+ 	typedef curlpp::OptionTrait<bool, CURLOPT_FTPAPPEND> FtpAppend;
+-- 
+2.47.1
+
