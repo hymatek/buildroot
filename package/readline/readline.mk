@@ -30,5 +30,14 @@ define READLINE_INSTALL_INPUTRC
 endef
 READLINE_POST_INSTALL_TARGET_HOOKS += READLINE_INSTALL_INPUTRC
 
+# readline does not link its shared library against the curses/termcap
+# library, leaving termcap symbols (UP, BC, PC) undefined. fakeroot runs
+# its finalization script with $(HOST_DIR)/lib in LD_LIBRARY_PATH, so a
+# readline-linked /bin/sh loads this host libreadline.so during root
+# filesystem generation and aborts on the undefined symbols. Link it
+# against the libncursesw that host-ncurses provides (it carries those
+# symbols) via readline's SHLIB_LIBS.
+HOST_READLINE_MAKE_OPTS += SHLIB_LIBS="-L$(HOST_DIR)/lib -lncursesw"
+
 $(eval $(autotools-package))
 $(eval $(host-autotools-package))
